@@ -1,0 +1,19 @@
+model:
+  face_weights: "models/fer_mini_xception.onnx"
+  hf_fallback: "dima806/facial_emotions_image_detection"
+  img_size: 64
+  classes: ["happiness", "sadness", "anger", "surprise", "fear", "disgust", "neutral", "unknown"]
+fusion:
+  mode: "late_quality_weighted"
+  min_face_quality: 0.25
+  min_body_quality: 0.25
+  temporal_ema: 0.6
+calibration:
+  store: "configs/personal_baseline.json"
+  opt_in: false
+server:
+  host: "127.0.0.1"
+  port: 8000
+ethics:
+  local_first: true
+  infant_warning: true

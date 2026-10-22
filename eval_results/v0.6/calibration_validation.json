@@ -1,0 +1,39 @@
+{
+  "T": 1.0449748743718594,
+  "threshold": 0.5,
+  "fit": "validation_margin25",
+  "ece_test_uncal": 0.05973568156101637,
+  "ece_test_cal": 0.04948887523849547,
+  "abstention_test": [
+    {
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "accuracy": 0.6593391008367607,
+      "n": 7051
+    },
+    {
+      "threshold": 0.5,
+      "coverage": 0.7661324634803574,
+      "accuracy": 0.7478711588300629,
+      "n": 5402
+    },
+    {
+      "threshold": 0.7,
+      "coverage": 0.5177988937739327,
+      "accuracy": 0.8438783894823336,
+      "n": 3651
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.2974046234576656,
+      "accuracy": 0.9303767286599904,
+      "n": 2097
+    },
+    {
+      "threshold": 0.95,
+      "coverage": 0.2198269748971777,
+      "accuracy": 0.9574193548387097,
+      "n": 1550
+    }
+  ]
+}

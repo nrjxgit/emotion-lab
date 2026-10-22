@@ -1,0 +1,66 @@
+{
+  "comment": "Designer/Command choices from the EL-006 cycle order, section 2. Hypothesis thresholds, NEVER tuned on real data; synthetic streams only. Changing any value changes the pinned hash.",
+  "confidence": {
+    "cap": 0.8,
+    "comment": "confidence = rule margin x coverage x mean detector quality, capped below the fusion caps."
+  },
+  "features": {
+    "comment": "gaze_away is a head-orientation PROXY (eye-midpoint to nose offset over inter-ocular distance), not gaze. Weights apply to FER7 probabilities.",
+    "dwell_gap_seconds": 1.0,
+    "neg_weights": {
+      "fear": 1.0,
+      "sad": 0.5,
+      "surprise": 0.8
+    },
+    "osc_min_delta": 0.05,
+    "still_radius_iod": 1.5,
+    "yaw_away_threshold": 0.25
+  },
+  "gates": {
+    "comment": "Below these the output is INSUFFICIENT EVIDENCE; more than one face in the window is never analysed.",
+    "min_coverage": 0.6,
+    "min_quality": 0.3
+  },
+  "name": "HB-1",
+  "needs_help_like": {
+    "comment": "temporal escalation only: dwell > dwell_s AND (nervous-like or unsure-like firing in >= sustain_fraction of the evaluation points over the last 2 windows) AND gaze_away episodes >= episodes_min.",
+    "dwell_s": 5.0,
+    "dwell_span_s": 5.0,
+    "episodes_min": 2,
+    "episodes_span": 2.0,
+    "sustain_fraction": 0.5,
+    "sustain_points": 4,
+    "sustain_step_s": 1.5
+  },
+  "nervous_like": {
+    "arousal_hi_span": 0.4,
+    "arousal_hi_thr": 0.5,
+    "comment": "high p_neg_arousal AND (head_jitter high OR arousal high). Margin = clip((x - thr) / span, 0, 1); AND = min, OR = max.",
+    "head_jitter_span": 0.06,
+    "head_jitter_thr": 0.04,
+    "p_neg_arousal_span": 0.3,
+    "p_neg_arousal_thr": 0.3
+  },
+  "unsure_like": {
+    "arousal_lo_span": 0.35,
+    "arousal_lo_thr": 0.35,
+    "comment": "(neutral OR low-confidence expression) AND hesitation high AND gaze_away moderate (band) AND low arousal.",
+    "gaze_away_edge_span": 0.1,
+    "gaze_away_hi": 0.6,
+    "gaze_away_lo": 0.15,
+    "hesitation_span": 0.35,
+    "hesitation_thr": 0.25,
+    "p_neutral_span": 0.3,
+    "p_neutral_thr": 0.4,
+    "top_prob_span": 0.2,
+    "top_prob_thr": 0.5
+  },
+  "version": 1,
+  "window": {
+    "comment": "W = 3 s; minimum 2 s at >= 5 usable fps; expected_fps is the paced-loop target midpoint (8-10 fps).",
+    "expected_fps": 8.0,
+    "min_seconds": 2.0,
+    "min_usable_fps": 5.0,
+    "seconds": 3.0
+  }
+}

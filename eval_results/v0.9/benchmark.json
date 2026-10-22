@@ -1,0 +1,220 @@
+{
+  "dataset": "fer2013-test",
+  "models": [
+    "mini-xception",
+    "vit",
+    "mini-xception"
+  ],
+  "results": {
+    "mini-xception": {
+      "adapter": "mini-xception",
+      "dataset": "fer2013-test",
+      "n": 70,
+      "n_detected": 70,
+      "coverage": 1.0,
+      "abstention_coverage": 0.0,
+      "latency_ms": 13.321117142887877,
+      "accuracy": 0.5857142857142857,
+      "macro_f1": 0.5933608445218352,
+      "selective_accuracy": 0.5857142857142857,
+      "per_class_precision": {
+        "angry": 0.7777777777777778,
+        "disgust": 1.0,
+        "fear": 0.5714285714285714,
+        "happy": 0.5625,
+        "sad": 0.2857142857142857,
+        "surprise": 0.8333333333333334,
+        "neutral": 0.5
+      },
+      "per_class_recall": {
+        "angry": 0.7,
+        "disgust": 0.6,
+        "fear": 0.4,
+        "happy": 0.9,
+        "sad": 0.4,
+        "surprise": 0.5,
+        "neutral": 0.6
+      },
+      "per_class_f1": {
+        "angry": 0.7368421052631579,
+        "disgust": 0.75,
+        "fear": 0.47058823529411764,
+        "happy": 0.6923076923076923,
+        "sad": 0.3333333333333333,
+        "surprise": 0.625,
+        "neutral": 0.5454545454545454
+      },
+      "confusion": [
+        [
+          7,
+          0,
+          0,
+          0,
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          6,
+          1,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          2,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          9,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          2,
+          4,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0,
+          5,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          2,
+          1,
+          6
+        ]
+      ],
+      "ece": 0.1407434408167898
+    },
+    "vit": {
+      "adapter": "vit",
+      "dataset": "fer2013-test",
+      "n": 70,
+      "n_detected": 70,
+      "coverage": 1.0,
+      "abstention_coverage": 0.0,
+      "latency_ms": 736.2225771427672,
+      "accuracy": 0.9,
+      "macro_f1": 0.9003831197550791,
+      "selective_accuracy": 0.9,
+      "per_class_precision": {
+        "angry": 0.8181818181818182,
+        "disgust": 1.0,
+        "fear": 1.0,
+        "happy": 1.0,
+        "sad": 0.75,
+        "surprise": 1.0,
+        "neutral": 0.8333333333333334
+      },
+      "per_class_recall": {
+        "angry": 0.9,
+        "disgust": 1.0,
+        "fear": 0.7,
+        "happy": 0.9,
+        "sad": 0.9,
+        "surprise": 0.9,
+        "neutral": 1.0
+      },
+      "per_class_f1": {
+        "angry": 0.8571428571428571,
+        "disgust": 1.0,
+        "fear": 0.8235294117647058,
+        "happy": 0.9473684210526315,
+        "sad": 0.8181818181818182,
+        "surprise": 0.9473684210526315,
+        "neutral": 0.9090909090909091
+      },
+      "confusion": [
+        [
+          9,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          7,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          9,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          10
+        ]
+      ],
+      "ece": 0.04428947393920292
+    }
+  }
+}

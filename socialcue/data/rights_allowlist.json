@@ -1,0 +1,94 @@
+{
+  "comment": "EL-006 S2 rights allowlist. Fail-closed: a dataset not listed here, or listed as not_granted or blocked_pending_operator, is refused. blocked_pending_operator keeps the licence-permitted uses/scopes on record but the gate refuses until the operator's decision changes this entry (a reviewed source change). Adding or changing an entry is a reviewed source change (the operator approves additions) and must update ALLOWLIST_SHA256 in socialcue/data/rights.py. Licence facts are from receipts/EL-006-socialcue/research/licences-and-sources.md (accessed 2026-10-20); not legal advice.",
+  "datasets": [
+    {
+      "name": "synthetic",
+      "licence_tag": "synthetic-manufactured",
+      "licence_ref": "socialcue/synthetic.py: manufactured numbers, no third-party rights involved",
+      "source_class": "synthetic",
+      "allowed_uses": ["development_test", "research_evaluation", "research_training", "commercial_evaluation", "commercial_training"],
+      "scopes": ["synthetic"],
+      "status": "granted",
+      "note": "The only entry that runs without a further grant."
+    },
+    {
+      "name": "ravdess",
+      "licence_tag": "CC BY-NC-SA 4.0",
+      "licence_ref": "https://zenodo.org/records/1188976 (accessed 2026-10-20; the page also contains a plain-Attribution mention, NC-SA treated as governing)",
+      "source_class": "research_corpus",
+      "allowed_uses": ["research_evaluation", "research_training"],
+      "scopes": ["research_noncommercial"],
+      "status": "blocked_pending_operator",
+      "reason": "blocked: needs operator rights/scope decision",
+      "note": "Non-commercial research only. Commercial training is not allowed. Whether derived models inherit NC-SA is unknown. The adapter is a declaration that stays blocked until an operator rights/scope decision."
+    },
+    {
+      "name": "crema_d",
+      "licence_tag": "ODbL 1.0 / DbCL 1.0",
+      "licence_ref": "https://github.com/CheyneyComputerScience/CREMA-D (accessed 2026-10-20)",
+      "source_class": "research_corpus",
+      "allowed_uses": ["research_evaluation", "research_training"],
+      "scopes": ["research_noncommercial"],
+      "status": "blocked_pending_operator",
+      "reason": "blocked: needs operator rights/scope decision",
+      "note": "Commercial use of the clips (actor releases, share-alike for trained models) is unknown, so it is not listed. The README asks users to fill in a form. The adapter is a declaration that stays blocked until an operator rights/scope decision."
+    },
+    {
+      "name": "casme2",
+      "licence_tag": "by-application",
+      "licence_ref": "licence agreement with the authors required; terms not read",
+      "source_class": "by_application_corpus",
+      "allowed_uses": [],
+      "scopes": [],
+      "status": "not_granted",
+      "note": "By application. The operator submits; agents never do."
+    },
+    {
+      "name": "samm",
+      "licence_tag": "by-application",
+      "licence_ref": "request process and terms not found",
+      "source_class": "by_application_corpus",
+      "allowed_uses": [],
+      "scopes": [],
+      "status": "not_granted",
+      "note": "By application. The operator submits; agents never do."
+    },
+    {
+      "name": "smic",
+      "licence_tag": "by-application",
+      "licence_ref": "contact the University of Oulu group; terms not found",
+      "source_class": "by_application_corpus",
+      "allowed_uses": [],
+      "scopes": [],
+      "status": "not_granted",
+      "note": "By application. The operator submits; agents never do."
+    },
+    {
+      "name": "pilot_consented",
+      "licence_tag": "consented-pilot (terms set by the pilot consent form)",
+      "licence_ref": "S9pilot/pilot-protocol.md: consented adult volunteers, mock tasks; no data exists yet",
+      "source_class": "consented_pilot",
+      "allowed_uses": ["research_evaluation"],
+      "scopes": ["research_noncommercial"],
+      "status": "blocked_pending_operator",
+      "reason": "blocked: needs operator rights/scope decision and an ethics approval",
+      "requires_ethics_approval": true,
+      "note": "The gate requires the adapter to carry a non-empty ethics_approval_token string. Presence of that string is NOT an approval: nobody verifies it here. The operator and the ethics body decide; the allowlist stays blocked until the operator changes this entry in a reviewed source change."
+    },
+    {
+      "name": "synthetic_commercial_clean",
+      "licence_tag": "synthetic-commercial-clean",
+      "licence_ref": "socialcue/data/synthetic_commercial_adapter.py: manufactured numbers only; EL-006.S50 synthetic swap demonstration",
+      "source_class": "synthetic",
+      "allowed_uses": [
+        "commercial_training",
+        "research_evaluation"
+      ],
+      "scopes": [
+        "commercial_clean"
+      ],
+      "status": "granted",
+      "note": "Explicit reviewed synthetic entry under EL-006.S50; no real commercial-clean dataset or product training authorization."
+    }
+  ]
+}

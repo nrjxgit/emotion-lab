@@ -1,0 +1,43 @@
+{
+  "n_train": 28709,
+  "n_test": 7178,
+  "n_test_with_exact_train_duplicate": 568,
+  "mini_acc_on_duplicates": 0.6725352112676056,
+  "mini_acc_on_rest": 0.5499243570347958,
+  "mini_ece_on_duplicates": 0.05275294574014621,
+  "vit_abstention_full_test": [
+    {
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "accuracy": 0.8831150738367233,
+      "n": 7178
+    },
+    {
+      "threshold": 0.5,
+      "coverage": 0.9526330454165506,
+      "accuracy": 0.9040655162328166,
+      "n": 6838
+    },
+    {
+      "threshold": 0.7,
+      "coverage": 0.8496795764837002,
+      "accuracy": 0.9353992457779964,
+      "n": 6099
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.6288659793814433,
+      "accuracy": 0.9696499778466992,
+      "n": 4514
+    },
+    {
+      "threshold": 0.95,
+      "coverage": 0.4626636946224575,
+      "accuracy": 0.979223125564589,
+      "n": 3321
+    }
+  ],
+  "vit_ece_full_test": 0.014927920544668957,
+  "vit_overall_acc": 0.8831150738367233,
+  "warning": "duplicate rows inflate the score of any model that saw FER2013 train; ViT's own training membership remains unverified (see VIT_FORENSICS.md)"
+}

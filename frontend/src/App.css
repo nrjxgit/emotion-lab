@@ -1,0 +1,40 @@
+/* U5 presentation only. No clipping used to conceal horizontal overflow. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { margin: 0; min-inline-size: 0; inline-size: 100%; }
+body { color: #17212b; background: #fff; font-family: system-ui, sans-serif; line-height: 1.5; }
+.error-message { color: #b00020; background-color: #fff; }
+.dashboard { inline-size: 100%; max-inline-size: 80rem; margin-inline: auto; padding: clamp(.5rem, 2vw, 1rem); overflow-wrap: anywhere; }
+.dashboard :where(section, div, header, footer, details, dl, dd, pre) { min-inline-size: 0; max-inline-size: 100%; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.controls label { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .375rem; min-inline-size: 0; max-inline-size: 100%; }
+button, select, input { font: inherit; }
+button, select { min-inline-size: 0; max-inline-size: 100%; padding: .375rem; white-space: normal; }
+input[type="checkbox"] { flex: 0 0 auto; }
+.response-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; }
+.camera-preview { display: block; width: 100%; max-width: 100%; inline-size: 100%; max-inline-size: 100%; block-size: auto; aspect-ratio: 4 / 3; object-fit: contain; background: #111; }
+.score-bar { display: inline-block; block-size: .625rem; max-inline-size: 100%; background: #4a90e2; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-word; }
+dd { margin-inline-start: 0; }
+dt { font-weight: 600; }
+summary { cursor: pointer; padding-block: .375rem; }
+.history-chart { inline-size: 100%; min-inline-size: 0; }
+.history-table { inline-size: 100%; table-layout: fixed; border-collapse: collapse; }
+.history-table caption { text-align: start; font-weight: 600; }
+.history-table th, .history-table td { border: 1px solid #647382; padding: .375rem; text-align: start; overflow-wrap: anywhere; vertical-align: top; }
+.dashboard :is(button, select, input, summary, a):focus-visible, .dashboard:focus-visible, .skip-link:focus-visible { outline: 3px solid #0755b5; outline-offset: 3px; }
+.skip-link { position: absolute; inset-inline-start: .5rem; inset-block-start: .5rem; max-inline-size: calc(100% - 1rem); transform: translateY(-200%); padding: .5rem; background: #fff; color: #074693; z-index: 1; overflow-wrap: anywhere; }
+.skip-link:focus { transform: none; }
+@media (max-width: 30rem) { .controls { align-items: stretch; } .controls > label { inline-size: 100%; } }
+@media (forced-colors: active) { .score-bar { background: CanvasText; } }
+
+/* Social cues research prototype panel. Bars never animate for users who prefer reduced motion. */
+.cue-panel { border: 1px solid #647382; padding: clamp(.5rem, 2vw, 1rem); margin-block: 1rem; }
+.cue-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.cue-rows { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: .75rem; }
+.cue-row { border: 1px solid #647382; padding: .5rem; }
+.cue-row h3 { margin-block: 0 .25rem; }
+.cue-active { border-width: 3px; }
+.cue-bar-track { display: inline-block; inline-size: 8rem; max-inline-size: 100%; block-size: .625rem; border: 1px solid #647382; vertical-align: middle; }
+.cue-bar { display: block; block-size: 100%; background: #0755b5; transition: width .2s linear; }
+@media (prefers-reduced-motion: reduce) { .cue-bar { transition: none; } }
+@media (forced-colors: active) { .cue-bar { background: CanvasText; } }

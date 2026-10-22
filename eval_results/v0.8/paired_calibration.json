@@ -1,0 +1,34 @@
+{
+  "audit": {
+    "n": 546,
+    "n_unique": 546,
+    "duplicates": [],
+    "also_in_train": [],
+    "outside_selected_actors": []
+  },
+  "paired": {
+    "n": 546,
+    "acc_a": 0.2967032967032967,
+    "acc_b": 0.2967032967032967,
+    "agreement": 0.47802197802197804,
+    "both_correct": 103,
+    "both_wrong": 325,
+    "a_only": 59,
+    "b_only": 59
+  },
+  "T_actor_split": 5.0,
+  "n_cal_actors": 30,
+  "n_test_actors": 61,
+  "actor_split_T_grid": {
+    "T": 5.0,
+    "note": "grid ceiling [0.05,5]; unconstrained NLL minimum near T~10",
+    "test_ECE_before": 0.2847,
+    "test_ECE_after": 0.0501,
+    "n_cal_clips": 180,
+    "n_test_clips": 366
+  },
+  "actor_split_T_unconstrained": {
+    "T_about": 10.0,
+    "note": "NLL scan measurement only, not a validated procedure"
+  }
+}

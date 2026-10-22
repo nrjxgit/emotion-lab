@@ -1,0 +1,1 @@
+{"name":"emotion-frontend","version":"0.1.0","scripts":{"dev":"vite","build":"tsc && vite build","test":"vitest run"},"dependencies":{"react":"18","react-dom":"18","recharts":"2"},"devDependencies":{"@types/react":"^19.3.0","@types/react-dom":"^19.3.0","typescript":"5","vite":"5","vitest":"1"}}
